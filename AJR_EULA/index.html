@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>End-User License Agreement</title>
   <style>
-    /* ----- global reset & base ----- */
+    /* ============================================
+       HOLOGRAM EULA - COMPLETE MERGE
+       NotARealGameDev · Eternal Coming-into-Being
+       ============================================ */
+
+    /* ----- 1. RESET & BASE ----- */
     * {
       margin: 0;
       padding: 0;
@@ -13,7 +18,7 @@
     }
 
     body {
-      background-color: #0b0d1a;           /* fallback for the space image */
+      background-color: #0b0d1a;
       background-image: url('spaceBG.jpg');
       background-attachment: fixed;
       background-size: cover;
@@ -29,7 +34,7 @@
       align-items: center;
     }
 
-    /* ----- translucent card for readability ----- */
+    /* ----- 2. TRANSLUCENT CARD ----- */
     .eula-card {
       max-width: 1000px;
       width: 100%;
@@ -42,7 +47,114 @@
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    /* ----- typography – standard EULA style ----- */
+    /* ===== 3. HOLOGRAM NAVIGATION ===== */
+    .holo-nav {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 1.2rem 0 1rem 0;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.12);
+      flex-wrap: wrap;
+      width: 100%;
+      position: relative;
+    }
+
+    .holo-nav a {
+      color: #a0d4ff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.4rem;
+      border: 1px solid rgba(0, 200, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(0, 200, 255, 0.03);
+      transition: all 0.3s ease;
+      position: relative;
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.2);
+      box-shadow: 0 0 15px rgba(0, 200, 255, 0.05);
+    }
+
+    .holo-nav a::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 10px;
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(0, 200, 255, 0.3), rgba(100, 50, 255, 0.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .holo-nav a:hover {
+      color: #ffffff;
+      border-color: rgba(0, 200, 255, 0.6);
+      background: rgba(0, 200, 255, 0.08);
+      box-shadow: 0 0 30px rgba(0, 200, 255, 0.15), inset 0 0 30px rgba(0, 200, 255, 0.05);
+      transform: translateY(-2px);
+      text-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+    }
+
+    .holo-nav a:hover::before {
+      opacity: 1;
+    }
+
+    /* ===== ACTIVE STATE WITH PULSING ✦ ===== */
+    .holo-nav a.active {
+      color: #ffffff;
+      border-color: rgba(0, 200, 255, 0.5);
+      background: rgba(0, 200, 255, 0.1);
+      box-shadow: 0 0 30px rgba(0, 200, 255, 0.2), inset 0 0 30px rgba(0, 200, 255, 0.05);
+      text-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+    }
+
+    .holo-nav a.active::after {
+      content: '✦';
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      font-size: 0.75rem;
+      color: #00d4ff;
+      text-shadow: 
+        0 0 20px rgba(0, 212, 255, 0.8),
+        0 0 40px rgba(0, 212, 255, 0.4),
+        0 0 60px rgba(0, 212, 255, 0.2);
+      animation: star-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes star-pulse {
+      0% { 
+        opacity: 0.3; 
+        transform: scale(0.7);
+      }
+      50% { 
+        opacity: 1; 
+        transform: scale(1.2);
+        text-shadow: 
+          0 0 30px rgba(0, 212, 255, 1),
+          0 0 60px rgba(0, 212, 255, 0.6),
+          0 0 80px rgba(0, 212, 255, 0.3);
+      }
+      100% { 
+        opacity: 0.3; 
+        transform: scale(0.7);
+      }
+    }
+
+    .nav-divider {
+      color: rgba(0, 200, 255, 0.15);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    /* ----- 4. TYPOGRAPHY - EULA STYLE ----- */
     h1 {
       font-size: 2.2rem;
       font-weight: 700;
@@ -81,7 +193,7 @@
       color: #d6def0;
     }
 
-    /* ----- lists ----- */
+    /* ----- 5. LISTS ----- */
     ul, ol {
       margin: 0.5rem 0 1.2rem 1.8rem;
       padding-left: 0.3rem;
@@ -98,7 +210,7 @@
       font-weight: 600;
     }
 
-    /* ----- bold / emphasis for legal terms ----- */
+    /* ----- 6. BOLD / EMPHASIS ----- */
     strong, b {
       color: #ffffff;
       font-weight: 600;
@@ -116,7 +228,7 @@
       color: #fff;
     }
 
-    /* ----- inline code / references (e.g. Section 6.5) ----- */
+    /* ----- 7. INLINE REFERENCES ----- */
     .ref {
       font-weight: 500;
       color: #b8ccff;
@@ -127,7 +239,7 @@
       white-space: nowrap;
     }
 
-    /* ----- colored email (no mailto, to prevent bot scraping) ----- */
+    /* ----- 8. EMAIL ----- */
     .email {
       font-weight: 500;
       color: #7aa3ff;
@@ -140,12 +252,13 @@
       user-select: all;
       white-space: nowrap;
     }
+
     .email-warning {
       color: #ffb347;
       font-weight: 400;
     }
 
-    /* ----- blockquote for disclaimers (all-caps sections) ----- */
+    /* ----- 9. DISCLAIMER BLOCKS ----- */
     .disclaimer-block {
       background: rgba(255, 255, 255, 0.04);
       border-left: 4px solid #ffb347;
@@ -160,7 +273,7 @@
       color: #fff;
     }
 
-    /* ----- finer details (e.g. dates, small print) ----- */
+    /* ----- 10. META & FOOTER ----- */
     .meta {
       font-size: 0.9rem;
       color: #a0b0d0;
@@ -183,7 +296,32 @@
       color: #dfe8ff;
     }
 
-    /* ----- responsive tweaks ----- */
+    /* ----- 11. LOADING INDICATOR ----- */
+    #loading {
+      text-align: center;
+      padding: 2rem;
+      color: #b8c8e8;
+      font-size: 1.1rem;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* ----- 12. SCROLLBAR ----- */
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: #121624;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3a4b6e;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #5a7aa8;
+    }
+
+    /* ----- 13. RESPONSIVE ----- */
     @media (max-width: 640px) {
       body {
         padding: 1rem 0.6rem;
@@ -191,6 +329,23 @@
       .eula-card {
         padding: 1.6rem 1.2rem;
         border-radius: 18px;
+      }
+      .holo-nav {
+        gap: 0.8rem;
+        padding: 0.8rem 0;
+      }
+      .holo-nav a {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+        letter-spacing: 0.05em;
+      }
+      .holo-nav a.active::after {
+        font-size: 0.6rem;
+        top: -8px;
+        right: -5px;
+      }
+      .nav-divider {
+        display: none;
       }
       h1 {
         font-size: 1.7rem;
@@ -222,38 +377,24 @@
         font-size: 1.4rem;
       }
     }
-
-    /* ----- scrollbar style (optional) ----- */
-    ::-webkit-scrollbar {
-      width: 8px;
-      background: #121624;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #3a4b6e;
-      border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #5a7aa8;
-    }
-
-    /* ----- loading indicator ----- */
-    #loading {
-      text-align: center;
-      padding: 2rem;
-      color: #b8c8e8;
-      font-size: 1.1rem;
-    }
-    .hidden {
-      display: none !important;
-    }
   </style>
 </head>
 <body>
   <div class="eula-card" id="eulaContainer">
-    <!-- Loading message shown until JSON loads -->
+    
+    <!-- ===== HOLOGRAM NAVIGATION ===== -->
+    <nav class="holo-nav">
+      <a href="/">⌂ Home</a>
+      <span class="nav-divider">✦</span>
+      <a href="/AJR_EULA/" class="active">⚖ EULA</a>
+      <span class="nav-divider">✦</span>
+      <a href="https://www.youtube.com/@NotARealGameDev" target="_blank">▶ Watch</a>
+    </nav>
+
+    <!-- Loading message -->
     <div id="loading">Loading EULA...</div>
 
-    <!-- The actual content – hidden until variables are replaced -->
+    <!-- ===== EULA CONTENT ===== -->
     <div id="eulaContent" class="hidden">
       
       <!-- TITLE -->
@@ -630,17 +771,16 @@
       const loadingEl = document.getElementById('loading');
       const contentEl = document.getElementById('eulaContent');
 
-      // --- Default values (fallback if config.json fails to load) ---
+      // Default values (fallback if config.json fails to load)
       const defaultValues = {
         gameTitle: "A Journey Rediscovered - Intro Version",
         gameDevName: "NotARealGameDev",
         year: "2026",
         lastUpdated: "June 21, 2026",
-        //yourPlatformUsername: '[Your Platform Username]',
         tingrett: "Oslo tingrett"   
       };
 
-      // --- Function to replace {variables} in the content ---
+      // Function to replace {variables} in the content
       function replaceVariables(data) {
         const allElements = contentEl.querySelectorAll('*');
         const walker = document.createTreeWalker(
@@ -657,27 +797,22 @@
           node = walker.nextNode();
         }
 
-        // Replace text in text nodes
         textNodes.forEach(textNode => {
           let text = textNode.textContent;
           let updated = false;
-          // Replace all {variable} patterns
           text = text.replace(/\{([^}]+)\}/g, (match, key) => {
             const trimmedKey = key.trim();
             if (data.hasOwnProperty(trimmedKey)) {
               updated = true;
               return data[trimmedKey];
             }
-            return match; // keep original if not found
+            return match;
           });
           if (updated) {
             textNode.textContent = text;
           }
         });
 
-        // Also replace in attributes (e.g., placeholder, title, etc.)
-        // Only replace in text content for safety – attributes shouldn't contain these typically
-        // But if they do, we handle it here:
         allElements.forEach(el => {
           if (el.hasAttribute('placeholder')) {
             let val = el.getAttribute('placeholder');
@@ -708,7 +843,7 @@
         });
       }
 
-      // --- Fetch config.json and apply values ---
+      // Fetch config.json and apply values
       function loadConfig() {
         fetch('config.json')
           .then(response => {
@@ -718,23 +853,19 @@
             return response.json();
           })
           .then(data => {
-            // Merge with defaults (so any missing keys fall back to defaults)
             const merged = { ...defaultValues, ...data };
             replaceVariables(merged);
-            // Show content, hide loading
             loadingEl.classList.add('hidden');
             contentEl.classList.remove('hidden');
           })
           .catch(error => {
             console.warn('Could not load config.json, using default values. Error:', error);
-            // Use defaults
             replaceVariables(defaultValues);
             loadingEl.classList.add('hidden');
             contentEl.classList.remove('hidden');
           });
       }
 
-      // --- Start the process ---
       loadConfig();
     })();
   </script>
