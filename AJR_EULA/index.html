@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>End-User License Agreement</title>
+  <style>
+    /* ----- global reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0b0d1a;           /* fallback for the space image */
+      background-image: url('spaceBG.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #eaeef2;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ----- translucent card for readability ----- */
+    .eula-card {
+      max-width: 1000px;
+      width: 100%;
+      background: rgba(8, 12, 28, 0.88);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 28px;
+      padding: 2.8rem 2.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* ----- typography – standard EULA style ----- */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 0.5rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1.8rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-top: 2.2rem;
+      margin-bottom: 0.8rem;
+      color: #f2f6ff;
+      border-left: 4px solid #5b7dff;
+      padding-left: 0.9rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 1.6rem;
+      margin-bottom: 0.4rem;
+      color: #dce3ff;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #d6def0;
+    }
+
+    /* ----- lists ----- */
+    ul, ol {
+      margin: 0.5rem 0 1.2rem 1.8rem;
+      padding-left: 0.3rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+      font-size: 0.98rem;
+      color: #d0d9ee;
+    }
+
+    li strong {
+      color: #f0f4ff;
+      font-weight: 600;
+    }
+
+    /* ----- bold / emphasis for legal terms ----- */
+    strong, b {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .section-ref {
+      font-weight: 600;
+      color: #b3c7ff;
+    }
+
+    .legal-caps {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: #fff;
+    }
+
+    /* ----- inline code / references (e.g. Section 6.5) ----- */
+    .ref {
+      font-weight: 500;
+      color: #b8ccff;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.1rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.92em;
+      white-space: nowrap;
+    }
+
+    /* ----- colored email (no mailto, to prevent bot scraping) ----- */
+    .email {
+      font-weight: 500;
+      color: #7aa3ff;
+      background: rgba(122, 163, 255, 0.08);
+      padding: 0.1rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.92em;
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      letter-spacing: 0.01em;
+      user-select: all;
+      white-space: nowrap;
+    }
+    .email-warning {
+      color: #ffb347;
+      font-weight: 400;
+    }
+
+    /* ----- blockquote for disclaimers (all-caps sections) ----- */
+    .disclaimer-block {
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 4px solid #ffb347;
+      padding: 1rem 1.5rem;
+      margin: 1.8rem 0 1.5rem 0;
+      border-radius: 8px;
+      font-size: 0.98rem;
+      color: #f0f4ff;
+    }
+
+    .disclaimer-block strong {
+      color: #fff;
+    }
+
+    /* ----- finer details (e.g. dates, small print) ----- */
+    .meta {
+      font-size: 0.9rem;
+      color: #a0b0d0;
+      margin-top: -0.5rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 0.8rem;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.95rem;
+      color: #b8c8e8;
+      text-align: center;
+    }
+
+    .footer-note strong {
+      color: #dfe8ff;
+    }
+
+    /* ----- responsive tweaks ----- */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+      .eula-card {
+        padding: 1.6rem 1.2rem;
+        border-radius: 18px;
+      }
+      h1 {
+        font-size: 1.7rem;
+        margin-bottom: 1.2rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+        padding-left: 0.6rem;
+      }
+      h3 {
+        font-size: 1.1rem;
+      }
+      ul, ol {
+        margin-left: 1.2rem;
+      }
+      .disclaimer-block {
+        padding: 0.8rem 1rem;
+      }
+      .ref, .email {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .eula-card {
+        padding: 1.2rem 0.8rem;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+    }
+
+    /* ----- scrollbar style (optional) ----- */
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: #121624;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3a4b6e;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #5a7aa8;
+    }
+
+    /* ----- loading indicator ----- */
+    #loading {
+      text-align: center;
+      padding: 2rem;
+      color: #b8c8e8;
+      font-size: 1.1rem;
+    }
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="eula-card" id="eulaContainer">
+    <!-- Loading message shown until JSON loads -->
+    <div id="loading">Loading EULA...</div>
+
+    <!-- The actual content – hidden until variables are replaced -->
+    <div id="eulaContent" class="hidden">
+      
+      <!-- TITLE -->
+      <h1>END-USER LICENSE AGREEMENT</h1>
+      <p style="font-size:1.05rem; margin-top:-0.2rem;"><strong>For {gameTitle}</strong><br />
+      <span style="color:#a0b0d0;">Last Updated: {lastUpdated} <br />
+        Version: 1
+      </span></p>
+
+      <!-- ============ 1. PARTIES AND ACCEPTANCE ============ -->
+      <h2>1. PARTIES AND ACCEPTANCE</h2>
+      <p>This End-User License Agreement ("Agreement") constitutes a legally binding contract between you, the end-user ("User," "You"), and <strong>{gameDevName}</strong> ("Licensor," "We," "Us"), an independent creator team with principal place of activity in Norway.</p>
+      <p>By downloading, installing, accessing, or using the video game software titled <strong>{gameTitle}</strong> ("Game"), including any updates, patches, or associated content provided therewith, You acknowledge and agree to be bound by all terms and conditions set forth herein. <strong>BY DOWNLOADING, INSTALLING, ACCESSING, OR USING THE GAME, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND VOLUNTARILY ACCEPT ALL TERMS AND CONDITIONS SET FORTH IN THIS AGREEMENT, REGARDLESS OF WHETHER YOU HAVE ACTUALLY READ IT.</strong> If You do not agree to all terms of this Agreement, You are not authorized to download, install, or use the Game and must immediately cease all use and delete all copies from Your devices.</p>
+      <p><strong>YOU FURTHER ACKNOWLEDGE THAT THIS AGREEMENT MAY BE UPDATED FROM TIME TO TIME, AND THAT YOUR CONTINUED USE OF THE GAME CONSTITUTES ACCEPTANCE OF ANY UPDATED TERMS. IF YOU DO NOT AGREE TO AN UPDATED AGREEMENT, YOU MUST CEASE USING THE GAME.</strong></p>
+      <p>This Agreement supplements, and does not supersede, the terms of service of the digital distribution platform through which You obtained the Game ("Platform," including but not limited to Valve Corporation's Steam™ and Epic Games' Epic Games Store). In the event of any conflict between this Agreement and the Platform's terms regarding intellectual property, technical performance, or consumer rights, <strong>this Agreement and the laws of Norway shall prevail</strong>.</p>
+      <p><strong>BY CLICKING "INSTALL," "PURCHASE," "DOWNLOAD," OR "PLAY" ON THE PLATFORM, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND VOLUNTARILY ACCEPT ALL TERMS AND CONDITIONS SET FORTH IN THIS AGREEMENT. YOU FURTHER ACKNOWLEDGE THAT THIS AGREEMENT CONSTITUTES A BINDING LEGAL CONTRACT AND THAT YOU HAVE HAD THE OPPORTUNITY TO SEEK INDEPENDENT LEGAL ADVICE.</strong></p>
+
+      <!-- ============ 2. LICENSE GRANT AND INTELLECTUAL PROPERTY ============ -->
+      <h2>2. LICENSE GRANT AND INTELLECTUAL PROPERTY</h2>
+      <h3>2.1 Limited License.</h3>
+      <p>Subject to Your strict compliance with all terms and conditions of this Agreement, Licensor grants You a personal, non-exclusive, non-transferable, non-sublicensable, revocable, limited license to download, install, and execute the Game on compatible devices for non-commercial entertainment purposes only. This license is contingent upon Your continued compliance with all terms herein and may be terminated by Licensor in accordance with Section 4.2.</p>
+
+      <h3>2.2 Reservation of Rights.</h3>
+      <p>The Game, including without limitation its source code, object code, algorithms, visual interface, audio-visual content, artwork, animations, music, narrative, dialogue, character designs, game mechanics, trademarks, trade names, and all associated intellectual property rights therein (collectively, "Game IP"), is and shall remain the sole and exclusive property of Licensor and its third-party licensors. No ownership rights are transferred to You. This Agreement is a license, not a sale. All rights not expressly granted herein are expressly reserved by Licensor.</p>
+
+      <h3>2.3 Copyright Notice.</h3>
+      <p>The Game is protected by copyright law and international treaty provisions. Copyright © {year} {gameDevName}. All rights reserved. Unauthorized copying, distribution, modification, public display, or performance of the Game is strictly prohibited and may result in civil and criminal penalties.</p>
+
+      <h3>2.4 Prohibited Conduct.</h3>
+      <p>You shall not, directly or indirectly:</p>
+      <ul>
+        <li>(a) copy, reproduce, distribute, display, or create derivative works of the Game or any part thereof, except as expressly permitted herein;</li>
+        <li>(b) reverse engineer, decompile, disassemble, or otherwise attempt to derive the source code of the Game, except to the limited extent expressly permitted by mandatory Norwegian law for interoperability purposes, and then only after providing Licensor with prior written notice and a reasonable opportunity to provide the necessary information, which Licensor may refuse in its sole discretion;</li>
+        <li>(c) use, sell, rent, lease, sublicense, distribute, or otherwise commercialize the Game or any Game IP;</li>
+        <li>(d) remove, alter, or obscure any proprietary notices, labels, or marks contained in or on the Game;</li>
+        <li>(e) exploit the Game for any unauthorized purpose, including but not limited to any unlawful, fraudulent, or infringing activity;</li>
+        <li>(f) use the Game in connection with any service bureau, timesharing, or similar service;</li>
+        <li>(g) cheat, hack, or use any unauthorized third-party software or hardware to modify the Game, gain unfair advantage, or bypass security measures;</li>
+        <li>(h) exploit any bug, glitch, error, or vulnerability in the Game for personal gain or to the detriment of other users or Licensor;</li>
+        <li>(i) transmit, upload, or otherwise make available any content that is unlawful, defamatory, obscene, threatening, abusive, or infringing on third-party rights;</li>
+        <li>(j) impersonate any person or entity or falsely state or misrepresent Your affiliation with any person or entity;</li>
+        <li>(k) use any automated system, including but not limited to bots, scrapers, or offline readers, to access the Game;</li>
+        <li>(l) attempt to disrupt, interfere with, or compromise the integrity or security of the Game or any associated systems.</li>
+      </ul>
+
+      <!-- ============ 3. UPDATES AND MODIFICATIONS ============ -->
+      <h2>3. UPDATES AND MODIFICATIONS</h2>
+      <h3>3.1 Licensor's Sole Discretion.</h3>
+      <p>Licensor reserves the right, in its sole and absolute discretion, to issue updates, patches, modifications, enhancements, or discontinuations of the Game or any of its features, at any time and without prior notice to You. You acknowledge that Licensor has no obligation to provide any updates or support for the Game, except as expressly required by applicable law.</p>
+
+      <h3>3.2 Consumer Rights.</h3>
+      <p>Notwithstanding the foregoing, to the extent required by the Norwegian Digital Services Act (Digitalytelsesloven) and subject to all limitations and conditions therein, Licensor shall provide updates reasonably necessary to maintain the Game in material conformity. This obligation is subject to the following limitations:</p>
+      <ul>
+        <li>(a) Licensor's obligation to update is limited to defects that materially impair the core functionality of the Game;</li>
+        <li>(b) Licensor shall have a reasonable period to address any reported defect, the length of which shall be determined by Licensor in good faith based on the severity and complexity of the issue, and Licensor shall have sole discretion in making such determination;</li>
+        <li>(c) Licensor may, in its sole discretion, determine that a reported issue does not constitute a defect requiring remedy;</li>
+        <li>(d) Licensor's obligation to remedy does not extend to issues arising from Your hardware, software, operating system, network conditions, or modifications made to the Game by You or third parties;</li>
+        <li>(e) <strong>Defects that have been resolved and listed as "FIXED" in the public bug overview at <span class="ref">notarealgamedev.com/AJRBugs</span> shall not entitle You to a refund</strong>, as such defects are no longer present in the current version of the Game, and Licensor has fulfilled its obligation to remedy;</li>
+        <li>(f) <strong>Defects that are listed as "CONFIRMED / WILL FIX" in the public bug overview shall not entitle You to an immediate refund</strong>, as Licensor is actively exercising its right to rectify the defect. The reasonable period for remedy (as defined in section 6.5) begins when You submit a complete and compliant refund request under Section 6.8. Alternatively, if Licensor has confirmed the defect as "CONFIRMED / WILL FIX" on the public bug overview, the reasonable period shall also be deemed to have commenced on the date the defect was confirmed, provided You have not unreasonably delayed in submitting Your refund request.</li>
+        <li>(g) Licensor may determine that a defect is minor and does not materially impair the Game's core functionality, in which case Licensor shall have no obligation to remedy or provide any refund;</li>
+        <li>(h) Licensor's obligation to remedy shall be deemed fulfilled if Licensor provides a workaround or alternative solution, even if the underlying defect is not fully resolved.</li>
+      </ul>
+
+      <h3>3.3 Public Bug Overview.</h3>
+      <p>Licensor maintains a public overview of confirmed bugs at <span class="ref">notarealgamedev.com/AJRBugs</span>. This overview indicates the status of each confirmed bug. Licensor shall list a bug on the public overview <strong>only if and when</strong> Licensor determines that the reported issue constitutes a verifiable defect. Unconfirmed or unverified bug reports will not be published. The statuses are:</p>
+      <ul>
+        <li><strong>"CONFIRMED / WILL FIX"</strong> – Bug exists and Licensor intends to fix it in a future update. Refund claims based on such bugs are considered, but Licensor shall have a reasonable period (as defined in Section 6.5) to remedy the defect from the date You submit a complete and compliant refund request under Section 6.8, not from the date the bug was confirmed on the public overview. If Licensor is unable to fix the defect within the reasonable period counted from Your refund request and the defect persists in the newest version of the Game, Licensor may grant a refund in accordance with Section 6.9;</li>
+        <li><strong>"FIXED"</strong> – Bug has been resolved in a released update. No refund claims based on such bugs are accepted, as the defect no longer exists in the newest version of the Game.</li>
+      </ul>
+      <p>You acknowledge and agree that Licensor shall have no obligation to provide updates or fixes beyond those listed in the public bug overview, and Licensor makes no guarantee that any specific bug will be fixed.</p>
+
+      <h3>3.4 Significant Changes.</h3>
+      <p>Licensor reserves the right to modify, alter, or discontinue any feature, functionality, or aspect of the Game at any time. If Licensor makes a change that materially and adversely alters the nature of the Game, You may terminate this Agreement and seek a remedy as provided in Section 6. However, Licensor shall not be liable for any changes made to comply with legal requirements, security standards, or third-party licensing obligations, and Licensor's determination of what constitutes a material change shall be final and binding.</p>
+
+      <h3>3.5 Discontinuation of Older Versions.</h3>
+      <p>Licensor may, at any time and in its sole discretion, discontinue support for older versions of the Game. Licensor shall provide notice of such discontinuation through the Platform's announcement system or the public bug overview. Following the discontinuation of an older version, Licensor shall have no obligation to maintain the conformity of that version, and Users who continue to use that version do so at their own risk.</p>
+
+      <!-- ============ 4. TERMINATION ============ -->
+      <h2>4. TERMINATION</h2>
+      <h3>4.1 Termination by You.</h3>
+      <p>You may terminate this Agreement at any time by permanently deleting the Game from all Your devices and ceasing all use of the Game. Upon termination, Your license to use the Game immediately ends. You are not entitled to any refund, compensation, or credit for any amounts paid, except as expressly provided in Section 6 of this Agreement.</p>
+
+      <h3>4.2 Termination by Licensor.</h3>
+      <p>Licensor may terminate this Agreement and suspend or revoke Your license to use the Game if You materially breach the terms of this Agreement. Such termination shall be based on, and limited to, instances of clear misconduct, including but not limited to violations of Section 2.4 (Prohibited Conduct) or fraudulent activity. Licensor shall notify You of the specific reason for any such termination in writing.</p>
+
+      <h3>4.3 Effect of Termination.</h3>
+      <p>Upon any termination of this Agreement, all licenses granted herein immediately terminate, You must immediately cease all use of the Game and delete all copies, and Licensor shall have no further obligation to You. You acknowledge that Licensor shall have no liability to You or any third party for any termination of this Agreement.</p>
+
+      <h3>4.4 Survival.</h3>
+      <p>Sections 2.2, 2.3, 5, 6, 7, 8, 9, and 10 shall survive any termination of this Agreement.</p>
+
+      <!-- ============ 5. DISCLAIMERS AND LIABILITY LIMITATIONS ============ -->
+      <h2>5. DISCLAIMERS AND LIABILITY LIMITATIONS</h2>
+      <div class="disclaimer-block">
+        <p><strong>5.1 No Warranty.</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE GAME AND ALL ASSOCIATED CONTENT AND SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND. LICENSOR EXPRESSLY DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, ACCURACY, COMPLETENESS, AND AVAILABILITY. LICENSOR DOES NOT WARRANT THAT THE GAME WILL BE ERROR-FREE, UNINTERRUPTED, SECURE, OR FREE FROM VIRUSES OR OTHER HARMFUL CODE, OR THAT ANY DEFECTS WILL BE CORRECTED. NOTHING IN THIS DISCLAIMER LIMITS YOUR STATUTORY RIGHTS AS A CONSUMER UNDER THE NORWEGIAN DIGITAL SERVICES ACT (DIGITALYTELSESLOVEN).</p>
+      </div>
+
+      <div class="disclaimer-block" style="border-left-color: #ff7b7b;">
+        <p><strong>5.2 Limitation of Liability.</strong> TO THE MAXIMUM EXTENT PERMITTED BY MANDATORY NORWEGIAN LAW, IN NO EVENT SHALL LICENSOR OR ITS AFFILIATES, OFFICERS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, LOSS OF REVENUE, LOSS OF DATA, LOSS OF USE, BUSINESS INTERRUPTION, OR ANY OTHER PECUNIARY OR NON-PECUNIARY LOSS, ARISING OUT OF OR RELATING TO THIS AGREEMENT OR THE USE OR INABILITY TO USE THE GAME, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STATUTE, OR ANY OTHER LEGAL THEORY, AND EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+      </div>
+
+      <div class="disclaimer-block" style="border-left-color: #5b8cff;">
+        <p><strong>5.3 Cap on Liability.</strong> TO THE MAXIMUM EXTENT PERMITTED BY MANDATORY NORWEGIAN LAW, LICENSOR'S AGGREGATE LIABILITY FOR ANY AND ALL CLAIMS ARISING OUT OF OR RELATING TO THIS AGREEMENT OR THE GAME, WHETHER BASED IN CONTRACT, TORT, OR OTHERWISE, SHALL NOT EXCEED THE AMOUNT YOU ACTUALLY PAID LICENSOR (EXCLUDING PLATFORM FEES) FOR THE GAME LICENSE WITHIN THE TWELVE (12) MONTHS PRECEDING THE CLAIM. MULTIPLE CLAIMS SHALL NOT EXPAND THIS LIMITATION.</p>
+      </div>
+
+      <div class="disclaimer-block" style="border-left-color: #4cd964;">
+        <p><strong>5.4 Consumer Rights.</strong> NOTHING IN THIS AGREEMENT SHALL EXCLUDE OR LIMIT LICENSOR'S LIABILITY FOR DEATH OR PERSONAL INJURY CAUSED BY LICENSOR'S GROSS NEGLIGENCE, FRAUD, OR WILLFUL MISCONDUCT, OR FOR ANY OTHER MATTER WHICH CANNOT BE EXCLUDED OR LIMITED UNDER MANDATORY NORWEGIAN CONSUMER LAW. YOUR STATUTORY RIGHTS AS A CONSUMER UNDER THE NORWEGIAN DIGITAL SERVICES ACT (DIGITALYTELSESLOVEN) AND CONSUMER PURCHASE ACT (FORBRUKERKJØPSLOVEN) ARE NOT AFFECTED BY THIS AGREEMENT, EXCEPT TO THE EXTENT PERMITTED BY SUCH LAWS.</p>
+      </div>
+
+      <h3>5.5 Acknowledgement.</h3>
+      <p>YOU ACKNOWLEDGE AND AGREE THAT YOU HAVE READ AND UNDERSTOOD THIS SECTION 5, AND THAT YOU VOLUNTARILY ASSUME ALL RISKS ASSOCIATED WITH THE USE OF THE GAME.</p>
+
+      <!-- ============ 6. REFUNDS AND DEFECT REMEDIES ============ -->
+      <h2>6. REFUNDS AND DEFECT REMEDIES</h2>
+      <h3>6.1 Right to Rectification.</h3>
+      <p>If the Game fails to conform as a result of a material defect (<em>mangel</em>, as defined under the Norwegian Consumer Purchase Act <em>Forbrukerkjøpsloven</em>), You have the right to require Licensor to remedy such defect, subject to the limitations set forth in this Section 6.</p>
+
+      <h3>6.2 Defect Notice Requirements.</h3>
+      <p>To exercise your rights under this Section 6, You must provide Licensor with a Defect Notice. You must notify Licensor of the alleged defect in writing to <span class="email">AJRBugs@proton.me</span> with the subject line <strong>"DEFECT NOTICE – {gameTitle}"</strong>. Your notice must include, at a minimum:</p>
+      <ul>
+        <li>(a) <strong>Your full name and Platform username</strong>;</li>
+        <li>(b) <strong>The date You purchased or downloaded the Game</strong>, verified by a copy of Your purchase confirmation email or receipt from the Platform;</li>
+        <li>(c) <strong>A description of the alleged defect and the steps to reproduce it</strong>;</li>
+        <li>(d) <strong>A statement confirming</strong> that You have not modified the Game or used any third-party software or hardware that may affect the Game's performance;</li>
+        <li>(e) <strong>Any other information</strong> that Licensor may reasonably request to assist in the investigation.</li>
+      </ul>
+
+      <h3>6.3 Incomplete Notices.</h3>
+      <p>Licensor reserves the right, in its sole discretion, to decline to respond to any Defect Notice that does not comply with all requirements of Section 6.2. If Licensor determines that the information provided is inadequate, Licensor may, but is not required to, notify You of any deficiencies. Licensor may, in its sole discretion, respond to Defect Notices that contain sufficient information by confirming that Licensor will investigate the matter further. The fact that Licensor responds to a Defect Notice shall not constitute an admission that the alleged defect exists or that Licensor has any obligation to remedy it.</p>
+
+      <h3>6.4 Licensor's Investigation and Remedy.</h3>
+      <p>Upon receipt of a Defect Notice that Licensor, in its sole discretion, determines contains sufficient information to warrant investigation, Licensor may make an effort to investigate the alleged defect. If Licensor is able to verify the defect and determines that it constitutes a material defect, Licensor shall list the defect as "CONFIRMED / WILL FIX" on the public bug overview and use reasonable efforts to remedy the defect within a reasonable period (as defined in Section 6.5), determined in good faith based on the severity and complexity of the issue. Licensor's obligation to remedy is conditioned upon Licensor being able to verify the defect. If Licensor, after an effort, is unable to verify the defect, Licensor shall have no further obligation to remedy and the defect shall not be listed on the public bug overview.</p>
+
+      <h3>6.5 Reasonable Period.</h3>
+      <p>For the purposes of this Agreement, a "reasonable period" for Licensor to remedy a confirmed defect shall be <strong>ninety (90) days</strong> from the date Licensor receives a <strong>complete and compliant refund request</strong> meeting all requirements of Section 6.8, provided that:</p>
+      <ul>
+        <li>(a) This period may be extended if the defect is complex, requires significant development work, or depends on third-party software or hardware updates, in which case Licensor may extend the period by an additional <strong>ninety (90) days</strong>, with notice to You through the public bug overview stating the reason for the extension and the expected timeframe for resolution;</li>
+        <li>(b) The period begins anew if You fail to use the newest version of the Game or fail to provide adequate cooperation to allow Licensor to verify the fix;</li>
+        <li>(c) If You have not submitted a complete and compliant refund request, no reasonable period under this Section 6.5 shall commence, and Licensor shall have no obligation to remedy the defect within any specific timeframe;</li>
+        <li>(d) Licensor's determination of what constitutes a reasonable period for any specific defect shall be made in good faith and shall be final, subject to consumer rights under mandatory Norwegian law.</li>
+      </ul>
+
+      <h3>6.6 Public Bug Overview.</h3>
+      <p>Licensor maintains a public overview of confirmed bugs at <span class="ref">notarealgamedev.com/AJRBugs</span>, which indicates the status of each confirmed bug. You acknowledge and agree that:</p>
+      <ul>
+        <li>(a) If a bug is listed as <strong>"FIXED,"</strong> You shall not be entitled to any refund based on that bug, as the defect no longer exists in the current version of the Game;</li>
+        <li>(b) If a bug is listed as <strong>"CONFIRMED / WILL FIX,"</strong> You shall not be entitled to an immediate refund. Licensor shall have a reasonable period of <strong>ninety (90) days</strong> from the date Licensor receives a complete and compliant refund request under Section 6.8 to remedy the defect. If Licensor fails to remedy the defect within this period (or any extended period under Section 6.5(a)) and the defect persists in the newest version of the Game, You may be entitled to a refund in accordance with Section 6.9;</li>
+        <li>(c) If a bug is not listed on the public overview, You may still submit a refund request <strong>only if</strong>:
+          <ul>
+            <li>(i) You submitted a complete Defect Notice under Section 6.2;</li>
+            <li>(ii) Licensor did not respond to Your Defect Notice within thirty (30) days of receipt;</li>
+            <li>(iii) Licensor did not list the defect as "CONFIRMED / WILL FIX" within sixty (60) days of Your Defect Notice; and</li>
+            <li>(iv) You are using the newest version of the Game and the defect still exists.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>You acknowledge that if Licensor does not respond to a Defect Notice, You should not assume that Licensor has received or accepted the claim. You may follow up with Licensor, but Licensor has no obligation to respond to incomplete or unfounded claims.</p>
+
+      <h3>6.7 Verification Condition.</h3>
+      <p>Licensor's obligation to remedy a defect under Section 6.4 is conditioned upon Licensor being able to confirm the existence of the alleged defect through its investigation. If Licensor, after an effort, is unable to verify or reproduce the defect, Licensor may conclude that:</p>
+      <ul>
+        <li>(a) The defect does not exist;</li>
+        <li>(b) The defect is caused by Your hardware, software, network configuration, user error, or modifications made to the Game by You or third parties;</li>
+        <li>(c) The information provided in Your Defect Notice is insufficient to allow Licensor to verify the defect.</li>
+      </ul>
+      <p>In any such case, Licensor shall have no further obligation to remedy the alleged defect. You may provide additional information or evidence to assist Licensor, and Licensor may re-evaluate the claim if such additional information is provided within fourteen (14) days of Licensor's notification. If Licensor does not respond to a Defect Notice, You should not assume that Licensor has received, investigated, or accepted the claim.</p>
+
+      <h3>6.8 Right to Terminate and Refund.</h3>
+      <p>If You believe Licensor has failed to remedy a confirmed defect within a reasonable period, You may request a refund by submitting a request to <span class="email">AJRBugs@proton.me</span> with the subject line <strong>"REFUND REQUEST – {gameTitle}"</strong>, providing:</p>
+      <ul>
+        <li>(a) Your full name and Platform username;</li>
+        <li>(b) A copy of Your original Defect Notice;</li>
+        <li>(c) A statement confirming that the defect is listed as "CONFIRMED / WILL FIX" on the public bug overview;</li>
+        <li>(d) A statement confirming that You are using the newest version of the Game and that the defect persists in the newest version;</li>
+        <li>(e) A statement confirming that You have checked the public bug overview and the defect is not listed as "FIXED";</li>
+        <li>(f) A statement confirming that You have diligently followed all procedures set forth in this Agreement, including but not limited to providing complete information in Your Defect Notice and cooperating with Licensor's investigation;</li>
+        <li>(g) A statement confirming that at least ninety (90) days have passed since You submitted this refund request, and that Licensor has had a reasonable opportunity to remedy the defect during this period;</li>
+        <li>(h) Any other information that Licensor may reasonably request.</li>
+      </ul>
+      <p><strong>The reasonable period for remedy (Section 6.5) shall commence only upon receipt of a refund request that meets all requirements of this Section 6.8.</strong> If Your refund request does not meet all requirements, Licensor may notify You of the deficiencies, and the reasonable period shall not commence until You submit a corrected request meeting all requirements.</p>
+      <p>You acknowledge that failure to diligently follow the procedures set forth in this Agreement, including but not limited to providing complete and accurate information in Your Defect Notice and timely responding to Licensor's requests for additional information, shall result in the denial of any refund request.</p>
+
+      <h3>6.9 Refund Processing and Implementation.</h3>
+      <p>Upon receipt of a refund request meeting all requirements of Section 6.8, Licensor shall review the request. Licensor shall grant a refund if all conditions of Section 6.9(a)-(d) are met, unless Licensor has a reasonable justification for denying the refund, such as the defect being minor, user-caused, or already fixed in a later version.</p>
+      <ul>
+        <li>(a) A material defect (<em>mangel</em>) existed and was verified by Licensor and listed as "CONFIRMED / WILL FIX" on the public bug overview;</li>
+        <li>(b) Licensor received a complete and compliant refund request under Section 6.8;</li>
+        <li>(c) Licensor failed to remedy the defect within the reasonable period (as defined in Section 6.5) counted from the date Licensor received the complete and compliant refund request; and</li>
+        <li>(d) The defect persists in the newest version of the Game and is not listed as "FIXED" on the public bug overview.</li>
+      </ul>
+      <p><strong>However, Licensor shall not grant a refund if:</strong></p>
+      <ul>
+        <li>(i) You have not diligently followed all procedures set forth in this Agreement;</li>
+        <li>(ii) You have failed to provide complete and accurate information in Your Defect Notice or refund request;</li>
+        <li>(iii) You have failed to cooperate with Licensor's investigation or remedy efforts;</li>
+        <li>(iv) You have failed to respond to Licensor's requests for additional information within fourteen (14) days of such request;</li>
+        <li>(v) You have not verified Your purchase date as required by Section 6.10;</li>
+        <li>(vi) The defect arises from Your hardware, software, operating system, drivers, network conditions, or modifications made to the Game by You or third parties;</li>
+        <li>(vii) The defect is minor and does not materially impair the Game's core functionality;</li>
+        <li>(viii) Less than ninety (90) days have passed since Licensor received Your complete and compliant refund request;</li>
+        <li>(ix) You submitted Your refund request after the defect was listed as "FIXED" on the public bug overview.</li>
+      </ul>
+      <p><strong>Implementation of Refund:</strong> Because Licensor sells the Game through the Epic Games Store (the "Platform"), Licensor has no direct technical ability to process refunds for Platform purchases. Refunds for Platform purchases are controlled and executed solely by Epic Games. To implement the refund, Licensor will provide You with a <strong>written confirmation of eligibility</strong> (a "Refund Confirmation Letter") that includes:</p>
+      <ul>
+        <li>(i) Your full name and Platform username;</li>
+        <li>(ii) A description of the defect and the basis for the refund;</li>
+        <li>(iii) A statement confirming that Licensor has determined You are eligible for a refund under this Agreement.</li>
+      </ul>
+      <p>You must then submit a refund request through <strong>Epic Games Player Support</strong> at <span class="ref">https://www.epicgames.com/help/</span> and attach the Refund Confirmation Letter provided by Licensor. Epic Games has sole discretion over the processing and execution of any refund. Licensor has no control over, and bears no responsibility for, any refund decisions made by Epic Games. If Epic Games denies your refund request, You acknowledge that Licensor has fulfilled its obligation under this Section 6 by confirming Your eligibility, and Licensor shall have no further obligation to You regarding this specific defect claim.</p>
+
+      <h3>6.10 Verification of Purchase Date.</h3>
+      <p>You must provide a copy of Your purchase confirmation email or receipt from the Platform as verification of the purchase date. Failure to provide such verification shall result in the denial of any refund request.</p>
+
+      <h3>6.11 Time Limitations.</h3>
+      <ul>
+        <li>(a) <strong>Notice Period.</strong> Any claim for a defect must be notified to Licensor within a reasonable time after You discovered or ought to have discovered the defect, with a minimum period of <strong>two (2) months</strong> from the date of discovery. Claims notified after this period shall be rejected.</li>
+        <li>(b) <strong>Prescription.</strong> Any claim for a defect under this Agreement must be brought within <strong>two (2) years</strong> from the date the Game was delivered to You, except for defects that were intentionally concealed by Licensor, or for Games reasonably expected to have a longer functional lifespan, in which case the period shall be <strong>five (5) years</strong> from delivery. Claims brought after this period shall be rejected.</li>
+      </ul>
+
+      <h3>6.12 Limitations on Refund Rights.</h3>
+      <p>You shall have no right to a refund under this Section 6 if:</p>
+      <ul>
+        <li>(a) Licensor, after an effort, is unable to verify or reproduce the defect;</li>
+        <li>(b) The defect is listed as <strong>"FIXED"</strong> on the public bug overview at <span class="ref">notarealgamedev.com/AJRBugs</span>;</li>
+        <li>(c) The defect arises from modifications made to the Game by You or any third party;</li>
+        <li>(d) The defect arises from Your hardware, software, operating system, drivers, or network conditions;</li>
+        <li>(e) The defect is minor and does not materially impair the Game's core functionality;</li>
+        <li>(f) The defect was disclosed to You prior to purchase;</li>
+        <li>(g) You failed to provide adequate information or cooperation to allow Licensor to remedy the defect;</li>
+        <li>(h) You have not paid the full purchase price for the Game;</li>
+        <li>(i) You cannot verify the date of purchase as required by Section 6.10;</li>
+        <li>(j) You have already received a refund for the Game;</li>
+        <li>(k) You have terminated this Agreement under Section 4.1;</li>
+        <li>(l) The Game was obtained through unauthorized means;</li>
+        <li>(m) You have violated any provision of Section 2.4 (Prohibited Conduct);</li>
+        <li>(n) You have been banned or suspended from the Game or Platform;</li>
+        <li>(o) More than two (2) years have passed since the date of purchase;</li>
+        <li>(p) <strong>You are not using the newest version of the Game</strong> at the time of the refund request. The reasonable period for fixing a defect (Section 6.5) applies only to the newest version of the Game. If You are using an older version, the defect may already be fixed in the newest version, and You must update before submitting a refund request. If the defect also exists in the newest version, this limitation shall not apply;</li>
+        <li>(q) <strong>You have not diligently followed all procedures set forth in this Agreement</strong>, including but not limited to:
+          <ul>
+            <li>(i) Failing to provide complete and accurate information in Your Defect Notice or refund request;</li>
+            <li>(ii) Failing to cooperate with Licensor's investigation or remedy efforts;</li>
+            <li>(iii) Failing to respond to Licensor's requests for additional information within fourteen (14) days of such request;</li>
+            <li>(iv) Failing to verify Your purchase date as required by Section 6.10;</li>
+            <li>(v) Submitting a refund request before the defect is listed as "CONFIRMED / WILL FIX" on the public bug overview;</li>
+            <li>(vi) Submitting a refund request after the defect is listed as "FIXED" on the public bug overview;</li>
+            <li>(vii) Failing to wait at least ninety (90) days from the date of Your complete and compliant refund request before claiming Licensor has failed to remedy the defect.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>6.13 Platform Refund Policies.</h3>
+      <p>This Agreement does not affect Your ability to seek a refund through the Platform's standard refund policies (e.g., Steam's refund policy or Epic Games' refund process). However, the Platform's policies are separate and independent from Your rights under this Agreement. Licensor has no control over, and bears no responsibility for, any refund decisions made by the Platform. You acknowledge that the Platform's refund policies may have shorter time limits than Your rights under this Agreement and that You are responsible for complying with the Platform's terms.</p>
+
+      <h3>6.14 Good Faith.</h3>
+      <p>Licensor's obligations under this Section 6 are to make an effort to investigate and remedy defects. Licensor's determination of what constitutes an effort, a reasonable period, and a material defect shall be made in good faith. Licensor's decisions in these matters shall be final and binding, subject to the rights of consumers under mandatory Norwegian law.</p>
+
+      <h3>6.15 No Obligation to Respond.</h3>
+      <p>Licensor shall make reasonable efforts to respond to Defect Notices that provide adequate information, given they fulfill the criteria of Section 6.2. However, Licensor is not obligated to respond to incomplete, frivolous, or unfounded claims. Licensor may, but is not required to, respond to Defect Notices. You acknowledge that Licensor may choose to only respond to Defect Notices that, in Licensor's sole discretion, provide adequate information and appear to describe a legitimate, verifiable defect. If You do not receive a response to Your Defect Notice, You should not assume that Licensor has received, accepted, or will investigate Your claim.</p>
+
+      <!-- ============ 7. PRIVACY AND DATA PROTECTION ============ -->
+      <h2>7. PRIVACY AND DATA PROTECTION</h2>
+      <h3>7.1 Data Collection.</h3>
+      <p>Licensor does not collect, store, or process any personal data from Users. By using the Game, You acknowledge that You are not required to provide any personal information to Licensor.</p>
+
+      <h3>7.2 Platform Data.</h3>
+      <p>The Platform (e.g., Epic Games Store) may collect and process Your data in accordance with its own privacy policy. Licensor has no control over, and bears no responsibility for, any data collected by the Platform.</p>
+
+      <h3>7.3 Security Warning.</h3>
+      <p>You are advised never to share any sensitive personal information, including but not limited to your IP address, passwords, financial information, or other identifying data, when contacting Licensor or any third party mentioned in this Agreement. Licensor will never request such information from You.</p>
+
+      <!-- ============ 8. GOVERNING LAW AND DISPUTE RESOLUTION ============ -->
+      <h2>8. GOVERNING LAW AND DISPUTE RESOLUTION</h2>
+      <h3>8.1 Governing Law.</h3>
+      <p>This Agreement and all matters arising out of or relating to this Agreement, whether in contract, tort, or otherwise, shall be governed by and construed in accordance with the laws of the Kingdom of Norway, without giving effect to any choice or conflict of law provision or rule that would cause the application of the laws of any other jurisdiction.</p>
+
+      <h3>8.2 Exclusive Jurisdiction.</h3>
+      <p>Any legal suit, action, or proceeding arising out of or relating to this Agreement or the Game shall be instituted exclusively in the courts of <strong>{tingrett}</strong>, Norway. You irrevocably submit to the exclusive jurisdiction of such courts and waive any objection to the venue or convenience of such forum. This provision does not affect Your rights as a consumer under applicable law.</p>
+
+      <h3>8.3 Consumer Forum.</h3>
+      <p>Notwithstanding Section 8.2, if You are a consumer residing in the European Economic Area, You may also bring proceedings in the courts of Your country of residence in accordance with applicable law. However, the governing law of this Agreement shall remain Norwegian law in all respects.</p>
+
+      <h3>8.4 Informal Resolution.</h3>
+      <p>Licensor is an independent creator team. Before initiating any formal legal proceeding, You agree to attempt to resolve any dispute informally by contacting Licensor at <span class="email">AJRBugs@proton.me</span> for a period of at least <strong>thirty (30) days</strong>. Licensor shall make reasonable efforts to address Your concerns in good faith.</p>
+
+      <h3>8.5 Waiver of Class Action.</h3>
+      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, YOU AGREE THAT ANY DISPUTE ARISING OUT OF OR RELATING TO THIS AGREEMENT OR THE GAME SHALL BE BROUGHT IN YOUR INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING.</p>
+
+      <!-- ============ 9. AMENDMENTS AND VERSIONING ============ -->
+      <h2>9. AMENDMENTS AND VERSIONING</h2>
+      <h3>9.1 Right to Amend.</h3>
+      <p>Licensor reserves the right to update or modify this Agreement from time to time, in its sole discretion, to reflect changes in the Game, applicable law, or business operations.</p>
+
+      <h3>9.2 Notice of Amendments.</h3>
+      <p>Licensor shall provide at least <strong>one (1) month's prior written notice</strong> of any material changes to this Agreement. Notice shall be provided through a durable medium, specifically via an in-game notification displayed upon launching the Game. The notice shall include:</p>
+      <ul>
+        <li>(a) A summary of the changes to this Agreement;</li>
+        <li>(b) The date the changes will take effect;</li>
+        <li>(c) A clear statement of Your right to terminate this Agreement in accordance with Section 9.5;</li>
+        <li>(d) A link or reference to the full updated Agreement available at <span class="ref">notarealgamedev.com/AJR_EULA</span>.</li>
+      </ul>
+
+      <h3>9.3 In-Game Notification System.</h3>
+      <p>Upon launching the Game, the Game will perform an online check to determine whether this Agreement has been updated. The Game will connect to Licensor's designated server at <span class="ref">notarealgamedev.com</span> to check for a new version of this Agreement. If an update is available, You will be presented with the updated Agreement or a summary thereof and asked to accept or reject the new terms.</p>
+
+      <h3>9.4 Server Unavailability.</h3>
+      <p>If the Game is unable to contact Licensor's server to check for EULA updates (e.g., due to network issues, server downtime, or if You are playing offline), the Game shall proceed with the assumption that no update exists, and You may continue using the Game under the existing Agreement. You will be prompted to check for updates again the next time the Game is launched with an active internet connection.</p>
+
+      <h3>9.5 Acceptance of Updated Terms.</h3>
+      <p>If You continue to use the Game after an update that includes a revised Agreement, Your continued use constitutes Your acceptance of the revised Agreement. If You do not accept the revised Agreement, You must cease all use of the Game and delete all copies from Your devices. <strong>You acknowledge that failure to accept an updated Agreement will result in Your inability to play the Game.</strong></p>
+
+      <h3>9.6 Right to Dissolve.</h3>
+      <p>If an amendment to this Agreement negatively affects You in a material way, You have the right to terminate this Agreement within <strong>thirty (30) days</strong> of receiving the notice of the amendment. You will not be penalized for such termination. If You terminate under this Section, You may be entitled to a refund as provided in Section 6, provided the defect claim meets all applicable requirements.</p>
+
+      <h3>9.7 Effective Date of Amendments.</h3>
+      <p>Unless otherwise stated, modifications to this Agreement shall apply only to versions of the Game released after the effective date of such modifications. Users who do not update to a newer version of the Game shall remain subject to the version of this Agreement that was in effect at the time they obtained their current version.</p>
+
+      <!-- ============ 10. MISCELLANEOUS ============ -->
+      <h2>10. MISCELLANEOUS</h2>
+      <h3>10.1 Entire Agreement.</h3>
+      <p>This Agreement constitutes the entire and exclusive understanding and agreement between You and Licensor regarding the Game, and supersedes and replaces all prior or contemporaneous agreements, representations, communications, and understandings, whether written or oral.</p>
+
+      <h3>10.2 Severability.</h3>
+      <p>If any provision of this Agreement is held by a court of competent jurisdiction to be invalid, illegal, or unenforceable for any reason, such provision shall be eliminated or limited to the minimum extent necessary, and the remaining provisions of this Agreement shall continue in full force and effect. The invalid, illegal, or unenforceable provision shall be replaced by a valid, legal, and enforceable provision that most closely reflects the original intent of the parties.</p>
+
+      <h3>10.3 No Waiver.</h3>
+      <p>The failure of Licensor to enforce any right or provision of this Agreement shall not constitute a waiver of such right or provision or of any other right or provision, nor shall it prevent Licensor from enforcing such right or provision in the future. Any waiver must be in writing and signed by Licensor.</p>
+
+      <h3>10.4 Assignment.</h3>
+      <p>Licensor may assign, transfer, or delegate this Agreement, in whole or in part, to any person or entity at any time with or without notice. You may not assign, transfer, or delegate any of Your rights or obligations under this Agreement without the prior written consent of Licensor. Any attempted assignment by You in violation of this Section shall be void.</p>
+
+      <h3>10.5 Notices.</h3>
+      <p>All notices to Licensor under this Agreement shall be sent in writing to <span class="email">AJRBugs@proton.me</span> or to such other address as Licensor may designate in writing. Licensor may send notices to You via the Platform's messaging system or to the email address associated with Your Platform account.</p>
+
+      <h3>10.6 Force Majeure.</h3>
+      <p>Licensor shall not be liable for any failure or delay in performance of its obligations under this Agreement resulting from any cause beyond its reasonable control, including but not limited to natural disasters, acts of God, war, terrorism, strikes, labor disputes, governmental actions, internet or telecommunications failures, or hacking attacks.</p>
+
+      <h3>10.7 No Third-Party Beneficiaries.</h3>
+      <p>This Agreement is for the sole benefit of the parties and their successors and permitted assigns, and nothing herein, express or implied, is intended to or shall confer upon any other person any legal or equitable right, benefit, or remedy of any nature whatsoever.</p>
+
+      <h3>10.8 Equitable Relief.</h3>
+      <p>You acknowledge that the Game contains valuable intellectual property and confidential information, and that a breach of this Agreement, particularly Sections 2.4, would cause irreparable harm to Licensor for which monetary damages would be inadequate. Accordingly, Licensor shall be entitled to seek injunctive or other equitable relief without the necessity of posting bond or proving actual damages.</p>
+
+      <h3>10.9 Headings.</h3>
+      <p>The headings in this Agreement are for convenience only and shall not affect the interpretation of any provision.</p>
+
+      <h3>10.10 Counterparts.</h3>
+      <p>This Agreement may be executed in multiple counterparts, each of which shall be deemed an original, and all of which together shall constitute one and the same instrument.</p>
+
+      <h3>10.11 Electronic Acceptance.</h3>
+      <p>You acknowledge that clicking "INSTALL," "PURCHASE," "DOWNLOAD," "PLAY," or any similar button constitutes Your electronic signature and acceptance of this Agreement, and that such electronic acceptance has the same legal effect as a handwritten signature.</p>
+
+      <!-- ============ 11. CONTACT INFORMATION ============ -->
+      <h2>11. CONTACT INFORMATION</h2>
+      <p>For all matters arising under this Agreement, including notices, inquiries, and refund requests:</p>
+      <p><strong>Studio Name:</strong> {gameDevName}<br />
+      <strong>Refund and Defect Notices:</strong> <span class="email">AJRBugs@proton.me</span><br />
+      <strong>Public Bug Overview:</strong> <span class="ref">notarealgamedev.com/AJRBugs</span><br />
+      <strong>EULA Updates and Notices:</strong> <span class="ref">notarealgamedev.com/AJR_EULA</span></p>
+
+      <!-- ============ FINAL ACCEPTANCE ============ -->
+      <div class="footer-note">
+        <p><strong>BY DOWNLOADING, INSTALLING, ACCESSING, OR USING THE GAME, YOU ACKNOWLEDGE AND AGREE THAT YOU HAVE READ, UNDERSTOOD, AND VOLUNTARILY ACCEPT ALL TERMS AND CONDITIONS SET FORTH IN THIS AGREEMENT, REGARDLESS OF WHETHER YOU HAVE ACTUALLY READ IT. YOU FURTHER ACKNOWLEDGE THAT THIS AGREEMENT CONSTITUTES A BINDING LEGAL CONTRACT AND THAT YOU HAVE HAD THE OPPORTUNITY TO SEEK INDEPENDENT LEGAL ADVICE. YOU ALSO ACKNOWLEDGE THAT THIS AGREEMENT MAY BE UPDATED, AND THAT YOUR CONTINUED USE OF THE GAME CONSTITUTES ACCEPTANCE OF ANY UPDATED TERMS. YOU ARE ADVISED NEVER TO SHARE SENSITIVE PERSONAL INFORMATION WHEN CONTACTING LICENSOR OR ANY THIRD PARTY MENTIONED HEREIN.</strong></p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: #8a9fc0;">END OF AGREEMENT</p>
+      </div>
+
+    </div> <!-- end eulaContent -->
+  </div> <!-- end eula-card -->
+
+  <script>
+    (function() {
+      'use strict';
+
+      const loadingEl = document.getElementById('loading');
+      const contentEl = document.getElementById('eulaContent');
+
+      // --- Default values (fallback if config.json fails to load) ---
+      const defaultValues = {
+        gameTitle: "A Journey Rediscovered - Intro Version",
+        gameDevName: "NotARealGameDev",
+        year: "2026",
+        lastUpdated: "June 21, 2026",
+        //yourPlatformUsername: '[Your Platform Username]',
+        tingrett: "Oslo tingrett"   
+      };
+
+      // --- Function to replace {variables} in the content ---
+      function replaceVariables(data) {
+        const allElements = contentEl.querySelectorAll('*');
+        const walker = document.createTreeWalker(
+          contentEl,
+          NodeFilter.SHOW_TEXT,
+          null,
+          false
+        );
+
+        const textNodes = [];
+        let node = walker.nextNode();
+        while (node) {
+          textNodes.push(node);
+          node = walker.nextNode();
+        }
+
+        // Replace text in text nodes
+        textNodes.forEach(textNode => {
+          let text = textNode.textContent;
+          let updated = false;
+          // Replace all {variable} patterns
+          text = text.replace(/\{([^}]+)\}/g, (match, key) => {
+            const trimmedKey = key.trim();
+            if (data.hasOwnProperty(trimmedKey)) {
+              updated = true;
+              return data[trimmedKey];
+            }
+            return match; // keep original if not found
+          });
+          if (updated) {
+            textNode.textContent = text;
+          }
+        });
+
+        // Also replace in attributes (e.g., placeholder, title, etc.)
+        // Only replace in text content for safety – attributes shouldn't contain these typically
+        // But if they do, we handle it here:
+        allElements.forEach(el => {
+          if (el.hasAttribute('placeholder')) {
+            let val = el.getAttribute('placeholder');
+            let newVal = val.replace(/\{([^}]+)\}/g, (match, key) => {
+              const trimmedKey = key.trim();
+              if (data.hasOwnProperty(trimmedKey)) {
+                return data[trimmedKey];
+              }
+              return match;
+            });
+            if (newVal !== val) {
+              el.setAttribute('placeholder', newVal);
+            }
+          }
+          if (el.hasAttribute('title')) {
+            let val = el.getAttribute('title');
+            let newVal = val.replace(/\{([^}]+)\}/g, (match, key) => {
+              const trimmedKey = key.trim();
+              if (data.hasOwnProperty(trimmedKey)) {
+                return data[trimmedKey];
+              }
+              return match;
+            });
+            if (newVal !== val) {
+              el.setAttribute('title', newVal);
+            }
+          }
+        });
+      }
+
+      // --- Fetch config.json and apply values ---
+      function loadConfig() {
+        fetch('config.json')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Merge with defaults (so any missing keys fall back to defaults)
+            const merged = { ...defaultValues, ...data };
+            replaceVariables(merged);
+            // Show content, hide loading
+            loadingEl.classList.add('hidden');
+            contentEl.classList.remove('hidden');
+          })
+          .catch(error => {
+            console.warn('Could not load config.json, using default values. Error:', error);
+            // Use defaults
+            replaceVariables(defaultValues);
+            loadingEl.classList.add('hidden');
+            contentEl.classList.remove('hidden');
+          });
+      }
+
+      // --- Start the process ---
+      loadConfig();
+    })();
+  </script>
+</body>
+</html>

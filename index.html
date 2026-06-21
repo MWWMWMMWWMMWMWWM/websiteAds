@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hologram · Infinite</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="holo-card">
+        <!-- Logo - PURE IMAGE, ORIGINAL SIZE -->
+        <div class="logo-wrap">
+            <img 
+                src="images/notARealGameDeV.png" 
+                alt="Game Dev Logo"
+                class="logo-holo"
+            />
+        </div>
+
+        <!-- Main text - NO BACKGROUND ANIMATIONS -->
+        <h1 class="title-glow">
+            Enabling the Growth of Memorable Experiences through Infinite Games
+        </h1>
+
+        <p class="sub-glow">
+            ... And creator of A Journey Rediscovered – Intro Version
+        </p>
+
+        <p class="download-label">
+            🌐 Download games and enjoy your time:
+        </p>
+
+        <!-- Link Image - COLORED WHITE -->
+        <a 
+            href="https://www.youtube.com/@NotARealGameDev" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="link-holo"
+        >
+            <img 
+                src="images/AJRLogo.png" 
+                alt="AJR Logo" 
+                class="link-image"
+                onerror="this.style.display='none'; this.parentElement.textContent='Test link';"
+            />
+            <span class="link-text">Test link</span>
+        </a>
+
+        <!-- Survey Section -->
+        <div class="survey-divider">
+            <span class="divider-text">✦ TRANSMISSION ✦</span>
+        </div>
+
+        <div class="survey-container">
+            <textarea
+                class="survey-input"
+                id="surveyInput"
+                rows="4"
+                maxlength="2000"
+                placeholder="✧ Align the telescopes... share your thoughts ✧"
+            ></textarea>
+            
+            <div class="survey-footer">
+                <div class="char-counter" id="charCounter">0 / 2000</div>
+                <button class="submit-btn" id="submitBtn" disabled>✦ Submit</button>
+            </div>
+        </div>
+
+        <div class="decorative-line"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
