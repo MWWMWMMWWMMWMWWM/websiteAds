@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/notARealGameDeVNoText.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/notARealGameDeVNoText.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/notARealGameDeVNoText.png" />
+  <link rel="shortcut icon" href="../images/notARealGameDeVNoText.png" />
+  <link rel="stylesheet" href="../styles.css" />
+  <title>Bug Overview · NotARealGameDev</title>
+  <style>
+    .bug-card {
+      max-width: 1000px;
+      width: 100%;
+      background: rgba(8, 12, 28, 0.88);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 28px;
+      padding: 2.8rem 2.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: left;
+    }
+    .bug-card h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 0.5rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1.8rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .bug-card h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #f2f6ff;
+      border-left: 4px solid #5b7dff;
+      padding-left: 0.9rem;
+    }
+    .bug-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 2rem 0;
+      font-size: 0.95rem;
+    }
+    .bug-table th {
+      background: rgba(255, 255, 255, 0.06);
+      color: #b8ccff;
+      font-weight: 600;
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+    .bug-table td {
+      padding: 12px 16px;
+      color: #d6def0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .bug-table tr:hover td {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .status-confirmed {
+      color: #ffb347;
+      font-weight: 600;
+    }
+    .status-fixed {
+      color: #4cd964;
+      font-weight: 600;
+    }
+    .bug-card .footer-note {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.95rem;
+      color: #b8c8e8;
+      text-align: center;
+    }
+    .bug-card .last-updated {
+      font-size: 0.9rem;
+      color: #a0b0d0;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 0.8rem;
+    }
+    .bug-card .email {
+      font-weight: 500;
+      color: #7aa3ff;
+      background: rgba(122, 163, 255, 0.08);
+      padding: 0.1rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.92em;
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      letter-spacing: 0.01em;
+      user-select: all;
+      white-space: nowrap;
+    }
+    @media (max-width: 640px) {
+      .bug-card { padding: 1.6rem 1.2rem; border-radius: 18px; }
+      .bug-card h1 { font-size: 1.7rem; }
+      .bug-card h2 { font-size: 1.2rem; }
+      .bug-table { font-size: 0.82rem; }
+      .bug-table th, .bug-table td { padding: 8px 10px; }
+      .bug-card .email { white-space: normal; }
+    }
+    /* Compact navigation */
+    .holo-nav { gap: 0.5rem; }
+    .holo-nav a { font-size: 0.8rem; padding: 0.4rem 0.8rem; letter-spacing: 0.05em; }
+    @media (max-width: 480px) {
+      .holo-nav a { font-size: 0.65rem; padding: 0.3rem 0.5rem; }
+      .holo-nav { gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="twinkling-stars"></div>
+
+  <div class="bug-card">
+    <nav class="holo-nav">
+      <a href="/">⌂ Home</a>
+      <span class="nav-divider">✦</span>
+      <a href="/AJR_EULA/">⚖ EULA</a>
+      <span class="nav-divider">✦</span>
+      <a href="/AJR_PRIV/">🔒 Privacy</a>
+      <span class="nav-divider">✦</span>
+      <a href="/AJRBugs/" class="active">🐛 Bugs</a>
+    </nav>
+
+    <h1>Public Bug Overview</h1>
+    <p class="last-updated"><strong>Last Updated:</strong> July 1, 2026</p>
+
+    <p>This page lists confirmed bugs for <strong>A Journey Rediscovered - Intro Version</strong>. For information on how bugs are reported and remedied, please refer to <strong>Section 6</strong> of the <a href="/AJR_EULA/" style="color: #7aa3ff; text-decoration: underline;">End-User License Agreement</a>.</p>
+
+    <h2>Status Definitions</h2>
+    <ul style="margin: 0.5rem 0 1.5rem 1.8rem; color: #d6def0;">
+      <li><span class="status-confirmed">● CONFIRMED / WILL FIX</span> – Bug exists and Licensor intends to fix it in a future update. Refund claims based on these bugs are subject to the reasonable period defined in Section 6.5 of the EULA.</li>
+      <li><span class="status-fixed">● FIXED</span> – Bug has been resolved in a released update. No refund claims based on this bug are accepted.</li>
+    </ul>
+
+    <h2>Confirmed Bugs</h2>
+
+    <table class="bug-table">
+      <thead>
+        <tr>
+          <th>Bug ID</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Reported</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code style="color:#8a9fc0;">#001</code></td>
+          <td>Example bug description – replace with actual bugs</td>
+          <td><span class="status-confirmed">CONFIRMED / WILL FIX</span></td>
+          <td>2026-07-01</td>
+        </tr>
+        <tr>
+          <td><code style="color:#8a9fc0;">#002</code></td>
+          <td>Example bug that has been fixed</td>
+          <td><span class="status-fixed">FIXED</span></td>
+          <td>2026-06-15</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="text-align: center; color: #8a9fc0; font-style: italic; padding: 2rem 0;">
+            No confirmed bugs to display at this time.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Report a Bug</h2>
+    <p>To report a defect, please send a Defect Notice as described in <strong>Section 6.2</strong> of the EULA:</p>
+    <ul style="margin: 0.5rem 0 1.2rem 1.8rem; color: #d6def0;">
+      <li><strong>Email:</strong> <span class="email">AJRBugs@proton.me</span></li>
+      <li><strong>Subject line:</strong> <code style="color:#8a9fc0;">DEFECT NOTICE – A Journey Rediscovered - Intro Version</code></li>
+      <li>Include your full name, Platform username, purchase date, and a description of the defect with steps to reproduce it.</li>
+    </ul>
+
+    <div class="footer-note">
+      <p>This page is updated when bugs are confirmed or resolved. Check back for the latest status.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #8a9fc0;">A Journey Rediscovered - Intro Version · NotARealGameDev</p>
+    </div>
+  </div>
+</body>
+</html>

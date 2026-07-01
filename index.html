@@ -10,20 +10,176 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/notARealGameDeVNoText.png" />
     <link rel="shortcut icon" href="images/notARealGameDeVNoText.png" />
     
-    <title>· Eternal Coming-into-Being ·</title>
+    <!-- Unified CSS -->
     <link rel="stylesheet" href="styles.css" />
+    
+    <title>· Eternal Coming-into-Being ·</title>
+    
+    <style>
+        /* Compact navigation for mobile */
+        .holo-nav {
+            gap: 0.5rem;
+        }
+        .holo-nav a {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+            letter-spacing: 0.05em;
+        }
+        @media (max-width: 480px) {
+            .holo-nav a {
+                font-size: 0.65rem;
+                padding: 0.3rem 0.5rem;
+            }
+            .holo-nav {
+                gap: 0.3rem;
+            }
+        }
+
+        /* Stylish YouTube link - Azure/Cyan theme */
+        .yt-mini-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #7ad0ff;
+            text-decoration: none;
+            padding: 0.3rem 1.2rem;
+            border-radius: 20px;
+            background: rgba(0, 180, 255, 0.06);
+            border: 1px solid rgba(0, 200, 255, 0.2);
+            transition: all 0.3s ease;
+            margin-top: -0.2rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 10px rgba(0, 180, 255, 0.15);
+        }
+        .yt-mini-link:hover {
+            background: rgba(0, 180, 255, 0.12);
+            border-color: rgba(0, 200, 255, 0.5);
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(0, 180, 255, 0.15);
+            color: #a8e0ff;
+        }
+        .yt-mini-link svg {
+            width: 18px;
+            height: 18px;
+            fill: #5bb8ff;
+            transition: fill 0.3s ease;
+        }
+        .yt-mini-link:hover svg {
+            fill: #80ccff;
+        }
+
+        /* Download confirmation modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 10001;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: rgba(8, 20, 40, 0.95);
+            border: 1px solid rgba(80, 200, 255, 0.3);
+            border-radius: 24px;
+            padding: 2.5rem 2.8rem;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 60px rgba(0, 160, 255, 0.2);
+            animation: modalSlide 0.3s ease;
+        }
+        .modal-box h2 {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 20px rgba(0, 180, 255, 0.3);
+        }
+        .modal-box p {
+            color: #b0d4f0;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        .modal-box .dest-url {
+            color: #7aa3ff;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.04);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.8rem;
+            word-break: break-all;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .modal-btn {
+            padding: 0.7rem 2rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            border: none;
+            min-width: 120px;
+        }
+        .modal-btn.confirm {
+            background: linear-gradient(135deg, rgba(0, 180, 255, 0.3), rgba(0, 100, 200, 0.3));
+            border: 1px solid rgba(0, 180, 255, 0.5);
+            color: #e6f2ff;
+            box-shadow: 0 0 20px rgba(0, 180, 255, 0.15);
+        }
+        .modal-btn.confirm:hover {
+            background: linear-gradient(135deg, rgba(0, 180, 255, 0.5), rgba(0, 100, 200, 0.5));
+            transform: scale(1.03);
+        }
+        .modal-btn.cancel {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #a0b0d0;
+        }
+        .modal-btn.cancel:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes modalSlide {
+            from { transform: translateY(-30px) scale(0.95); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+    </style>
 </head>
 <body>
     <div class="twinkling-stars"></div>
 
     <div class="holo-card">
-        <!-- Navigation -->
+        <!-- Navigation - Compact -->
         <nav class="holo-nav">
             <a href="/" class="active">⌂ Home</a>
             <span class="nav-divider">✦</span>
             <a href="/AJR_EULA/">⚖ EULA</a>
             <span class="nav-divider">✦</span>
-            <a href="https://www.youtube.com/@NotARealGameDev" target="_blank">▶ Watch</a>
+            <a href="/AJR_PRIV/">🔒 Privacy</a>
+            <span class="nav-divider">✦</span>
+            <a href="/AJRBugs/">🐛 Bugs</a>
         </nav>
 
         <!-- Logo -->
@@ -45,25 +201,32 @@
             ... And the creator of A Journey Rediscovered – Intro Version
         </p>
 
+        <!-- Stylish YouTube Link - Azure/Cyan Theme -->
+        <a href="https://www.youtube.com/@NotARealGameDev" target="_blank" rel="noopener noreferrer" class="yt-mini-link">
+            <svg viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            <span>Watch on YouTube</span>
+        </a>
+
         <!-- Download Label -->
         <p class="download-label">
             🌐 Download games and enjoy your time:
         </p>
 
-        <!-- Link -->
+        <!-- Download Link with Modal -->
         <a 
-            href="https://www.youtube.com/@NotARealGameDev" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+            href="#" 
+            id="downloadLink"
             class="link-holo"
         >
             <img 
                 src="images/AJRLogo.png" 
                 alt="AJR Logo" 
                 class="link-image"
-                onerror="this.style.display='none'; this.parentElement.textContent='Test link';"
+                onerror="this.style.display='none'; this.parentElement.querySelector('.link-text').textContent='Download Now';"
             />
-            <span class="link-text">Test link</span>
+            <span class="link-text">Download Now</span>
         </a>
 
         <!-- Survey Divider -->
@@ -90,6 +253,66 @@
         <div class="decorative-line"></div>
     </div>
 
+    <!-- Download Confirmation Modal -->
+    <div class="modal-overlay" id="downloadModal">
+        <div class="modal-box">
+            <h2>✦ Portal Opening ✦</h2>
+            <p>You are about to leave this site and visit:</p>
+            <div class="dest-url">https://www.youtube.com/@NotARealGameDev</div>
+            <p style="font-size: 0.85rem; color: #8a9fc0;">
+                This will open in a new tab. Do you wish to proceed?
+            </p>
+            <div class="modal-actions">
+                <button class="modal-btn confirm" id="modalConfirm">✦ Proceed</button>
+                <button class="modal-btn cancel" id="modalCancel">✧ Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keep script.js -->
     <script src="script.js"></script>
+
+    <script>
+        (function() {
+            'use strict';
+
+            const downloadLink = document.getElementById('downloadLink');
+            const modal = document.getElementById('downloadModal');
+            const confirmBtn = document.getElementById('modalConfirm');
+            const cancelBtn = document.getElementById('modalCancel');
+            const targetUrl = 'https://www.youtube.com/@NotARealGameDev';
+
+            downloadLink?.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            confirmBtn?.addEventListener('click', function() {
+                window.open(targetUrl, '_blank', 'noopener,noreferrer');
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            cancelBtn?.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            modal?.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
