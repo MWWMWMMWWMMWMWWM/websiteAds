@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="../styles.css" />
   <title>Bug Overview · NotARealGameDev</title>
   <style>
+    .status-attempted {
+  color: #ff8c42;
+  font-weight: 600;
+}
     .bug-card {
       max-width: 1000px;
       width: 100%;
@@ -139,10 +143,11 @@
     <p>This page lists confirmed bugs for <strong>A Journey Rediscovered - Intro Version</strong>. For information on how bugs are reported and remedied, please refer to <strong>Section 6</strong> of the <a href="/AJR_EULA/" style="color: #7aa3ff; text-decoration: underline;">End-User License Agreement</a>.</p>
 
     <h2>Status Definitions</h2>
-    <ul style="margin: 0.5rem 0 1.5rem 1.8rem; color: #d6def0;">
-      <li><span class="status-confirmed">● CONFIRMED / WILL FIX</span> – Bug exists and Licensor intends to fix it in a future update. Refund claims based on these bugs are subject to the reasonable period defined in Section 6.5 of the EULA.</li>
-      <li><span class="status-fixed">● FIXED</span> – Bug has been resolved in a released update. No refund claims based on this bug are accepted.</li>
-    </ul>
+<ul style="margin: 0.5rem 0 1.5rem 1.8rem; color: #d6def0;">
+  <li><span class="status-confirmed">● CONFIRMED / WILL FIX</span> – Bug exists and Licensor intends to fix it in a future update. Refund claims based on these bugs are subject to the reasonable period defined in Section 6.5 of the EULA.</li>
+  <li><span class="status-attempted" style="color: #ff8c42; font-weight: 600;">● ATTEMPTED</span> – Bug has been investigated and a fix was attempted, but due to complexity, technical limitations, or resource constraints, it may not be fully resolved. These bugs are considered "silenced" but not guaranteed fixed. Refund claims based on these bugs are not accepted, as Licensor has made a good faith effort to address them.</li>
+  <li><span class="status-fixed">● FIXED</span> – Bug has been resolved in a released update. No refund claims based on this bug are accepted.</li>
+</ul>
 
     <h2>Confirmed Bugs</h2>
 
