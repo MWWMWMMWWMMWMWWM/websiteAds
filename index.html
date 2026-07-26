@@ -48,7 +48,7 @@
             background: rgba(0, 180, 255, 0.06);
             border: 1px solid rgba(0, 200, 255, 0.2);
             transition: all 0.3s ease;
-            margin-top: -0.2rem;
+            margin-top: 1.2rem;
             margin-bottom: 0.8rem;
             text-shadow: 0 0 10px rgba(0, 180, 255, 0.15);
         }
@@ -67,6 +67,20 @@
         }
         .yt-mini-link:hover svg {
             fill: #80ccff;
+        }
+
+        /* Download label styling */
+        .download-label {
+            margin-top: 0.8rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+            color: #b0d4f0;
+            letter-spacing: 0.05em;
+        }
+
+        /* Download link with more bottom spacing */
+        .link-holo {
+            margin-bottom: 0.6rem;
         }
 
         /* Download confirmation modal */
@@ -201,12 +215,16 @@
             ... And the creator of A Journey Rediscovered – Intro Version
         </p>
 
-        <!-- Download Link – Epic Games Store (above YT) -->
+        <!-- Download Label -->
+        <p class="download-label">
+            🌐 Download games and enjoy your time:
+        </p>
+
+        <!-- Download Link – Epic Games Store -->
         <a 
             href="#" 
             id="downloadLink"
             class="link-holo"
-            style="margin-bottom: 0.4rem;"
         >
             <img 
                 src="images/AJRLogo.png" 
@@ -217,18 +235,13 @@
             <span class="link-text">Download Now</span>
         </a>
 
-        <!-- Stylish YouTube Link - Azure/Cyan Theme (now "Visit Channel") -->
+        <!-- Stylish YouTube Link - Azure/Cyan Theme -->
         <a href="https://www.youtube.com/@NotARealGameDev" target="_blank" rel="noopener noreferrer" class="yt-mini-link">
             <svg viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
             <span>Visit Channel</span>
         </a>
-
-        <!-- Download Label (moved down, kept for context) -->
-        <p class="download-label" style="margin-top: 0.2rem; margin-bottom: 0.6rem;">
-            🌐 Download games and enjoy your time:
-        </p>
 
         <!-- Survey Divider -->
         <div class="survey-divider">
