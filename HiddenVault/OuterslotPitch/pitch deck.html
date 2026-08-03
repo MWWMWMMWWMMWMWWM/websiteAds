@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Outersloth Funding Pitch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background: #f1f4f9;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1rem;  /* equal top and bottom padding */
+            line-height: 1.6;
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 920px;
+            width: 100%;
+            background: white;
+            border-radius: 28px;
+            padding: 2.8rem 3.2rem;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.07);
+            box-sizing: border-box;
+            margin: 0;  /* no extra margin, body padding handles spacing */
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+            color: #0f172a;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #475569;
+            border-bottom: 2px solid #e9edf2;
+            padding-bottom: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.45rem;
+            font-weight: 600;
+            margin-top: 2.4rem;
+            margin-bottom: 0.7rem;
+            color: #0f172a;
+            border-left: 5px solid #2563eb;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.6rem;
+            margin-bottom: 0.3rem;
+            color: #1e293b;
+        }
+
+        p {
+            margin-bottom: 0.9rem;
+            color: #1e293b;
+        }
+
+        ul {
+            margin: 0.6rem 0 1.2rem 1.6rem;
+            padding-left: 0.2rem;
+        }
+
+        li {
+            margin-bottom: 0.35rem;
+            color: #1e293b;
+        }
+
+        .highlight-box {
+            background: #f1f5f9;
+            padding: 1.2rem 1.8rem;
+            border-radius: 14px;
+            margin: 1.4rem 0 1.6rem 0;
+            border-left: 5px solid #2563eb;
+        }
+
+        .highlight-box strong {
+            color: #0f172a;
+        }
+
+        .highlight-box ul {
+            margin: 0.3rem 0 0 1.2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0 1.6rem 0;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: #f1f5f9;
+            text-align: left;
+            padding: 0.7rem 1rem;
+            font-weight: 600;
+            color: #0f172a;
+            border-bottom: 2px solid #d1d9e6;
+        }
+
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #e9edf2;
+            color: #1e293b;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .budget-summary {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.6rem 0 1.2rem 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .budget-summary table {
+            margin: 0.4rem 0 0 0;
+        }
+
+        .budget-summary td:last-child {
+            font-weight: 600;
+        }
+
+        .footer-note {
+            margin-top: 2.4rem;
+            padding-top: 1.4rem;
+            border-top: 2px solid #e9edf2;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e4f8a;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.9rem;
+            border-radius: 20px;
+            margin-right: 0.3rem;
+        }
+
+        @media (max-width: 650px) {
+            body {
+                padding: 1rem 0.8rem;  /* equal top/bottom on mobile too */
+            }
+            .container {
+                padding: 1.6rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            table {
+                font-size: 0.85rem;
+            }
+            td, th {
+                padding: 0.5rem 0.6rem;
+            }
+            .highlight-box {
+                padding: 1rem 1.2rem;
+            }
+            .budget-summary {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Funding Pitch</h1>
+    <div class="subhead">Outersloth &bull; November 17, 2027 release target &bull; $25,000–$58,000 requested</div>
+
+    <h2>Hardware Upgrades</h2>
+    <p><strong>$2,000 – $3,000</strong></p>
+    <p>VR development is demanding, and Unreal Engine 5 doesn't go easy on hardware. These upgrades are about keeping workflow smooth and avoiding constant waiting.</p>
+    <ul>
+        <li><strong>GPU:</strong> NVIDIA GeForce RTX 4080 or 4090 ($1,200 – $1,800). VR needs stable, high frame rates—stutter breaks immersion and makes testing uncomfortable. User-generated fields can get complex, and a 4090 gives enough headroom to handle them without dropping frames.</li>
+        <li><strong>CPU:</strong> AMD Ryzen 9 7900X or Intel i9-13900K ($400 – $600). Faster compilation means less time staring at progress bars. When iterating on gameplay or debugging, those seconds add up fast.</li>
+        <li><strong>RAM:</strong> 64GB DDR5 ($200 – $300). Running UE5, Visual Studio, profiling tools, and VR runtime simultaneously eats memory. 64GB keeps everything running side by side without bottlenecks.</li>
+        <li><strong>Storage:</strong> 2TB NVMe SSD ($150 – $250). Faster builds and asset loading mean less downtime between test runs.</li>
+    </ul>
+    <p>Beyond speed, better hardware reduces crash risks. When the system isn't constantly pushing its limits, stability improves. Fewer crashes mean fewer interruptions and more productive development sessions.</p>
+
+    <h2>Development Tools &amp; AI Agents</h2>
+    <p><strong>$1,500 – $2,500</strong></p>
+
+    <h3>GitHub Copilot</h3>
+    <p><strong>$10/month Pro ($100/year) &bull; $19/month Business</strong></p>
+    <p>Copilot integrated with Visual Studio cuts down on repetitive coding and catches patterns that would otherwise take extra time. Pro costs $10/month ($100/year) for individual use; if that's unavailable, Business is $19/month ($228/year).</p>
+
+    <h3>AI Marketing Tools</h3>
+    <p><strong>$500 – $2,000/month</strong></p>
+    <p>I'm considering a handful of AI marketing tools to fill the gaps where a solo dev can't be everywhere. These are subject to change, but the frontrunners are:</p>
+    <ul>
+        <li><strong>Okara AI CMO</strong> ($99/month or $1,000 lifetime) – Six AI agents handling SEO, copywriting, Reddit, Hacker News, and X posts. Audits positioning, finds competitors, generates promotional content. Lifetime access gives 2,000 credits per month indefinitely.</li>
+        <li><strong>AdSpawn</strong> (from $49/month) – Generates ad copy and headlines for game user acquisition. Supports A/B testing and creative optimization.</li>
+        <li><strong>Marketeze.ai</strong> (from ~$60/month) – Built for indie developers with GitHub integration and stage-based marketing playbooks.</li>
+    </ul>
+    <p>Total: roughly $500–$2,000 per month depending on which tools and tiers I go with.</p>
+
+    <h2>Marketing Agencies &amp; Creators</h2>
+    <p><strong>$15,000 – $40,000</strong></p>
+    <p>My marketing approach is focused and straightforward:</p>
+    <ul>
+        <li><strong>Specialized game marketing agencies</strong> – not generalists. I want people who understand the rhythm and VR space. Agencies I'm looking at include Heaven Media, Neptune Agency, Stratigia, and Impact Reality.</li>
+        <li><strong>Direct outreach to creators and streamers</strong> – contacting them personally on YouTube, Twitch, and similar platforms. Offering early access keys, demo builds, and unique content to showcase.</li>
+    </ul>
+    <p>I'm not spreading efforts across TikTok videos or Reddit posts—those channels have lower conversion rates and don't align with the audience I need to reach. The focus is on getting the game in front of people who will actually play it and share it with their communities.</p>
+    <p>The marketing campaign serves two purposes:</p>
+    <ul>
+        <li><strong>Grow the community</strong> around the Intro Version (Early Access) that's already out there. Get players in, get them creating fields, and get the ecosystem going.</li>
+        <li><strong>Build wishlists</strong> for the Full Version leading up to the November 17, 2027 release. Create momentum so launch day isn't starting from zero.</li>
+    </ul>
+
+    <div class="highlight-box">
+        <p><strong>Typical agency campaign (2–4 months)</strong></p>
+        <ul>
+            <li>Strategy consultation: $5,000 – $10,000</li>
+            <li>Influencer partnerships (10–20 creators): $5,000 – $15,000</li>
+            <li>Paid ad spend (Meta, YouTube): $10,000 – $20,000</li>
+            <li>Creative production (trailers, ad creatives, key art): $3,000 – $8,000</li>
+        </ul>
+        <p style="margin-top:0.6rem;"><strong>Total agency + ad spend: $23,000 – $53,000</strong></p>
+    </div>
+
+    <h2>Budget Summary (High Estimate)</h2>
+    <div class="budget-summary">
+        <table>
+            <tr><td>Hardware (RTX 4080/4090, Ryzen 9/i9, 64GB RAM, 2TB SSD)</td><td>$2,000 – $3,000</td></tr>
+            <tr><td>GitHub Copilot (Pro or Business)</td><td>$100 – $228/year</td></tr>
+            <tr><td>AI Marketing Tools (subject to change)</td><td>$500 – $2,000/month</td></tr>
+            <tr><td>Marketing Agency + Ad Spend (2–4 month campaign)</td><td>$23,000 – $53,000</td></tr>
+            <tr style="font-weight:600; border-top:2px solid #cbd5e1;"><td>Total</td><td>~$26,000 – $58,000</td></tr>
+        </table>
+    </div>
+
+    <h2>Outersloth Terms</h2>
+    <p>Outersloth provides <strong>funding only</strong> — they don't handle marketing, QA, or localization. Standard terms:</p>
+    <ul>
+        <li><strong>50%</strong> revenue share before recoupment</li>
+        <li><strong>15%</strong> revenue share after recoupment</li>
+        <li><strong>7-year</strong> contract term post-release</li>
+        <li>All platforms covered</li>
+    </ul>
+    <p>The budget above accounts for marketing separately, since Outersloth doesn't provide those services.</p>
+
+    <h2>Timeline</h2>
+    <p><strong>Full Version release target: November 17, 2027</strong></p>
+    <p>Between now and then, the remaining deliverables are the last main fields and the online field-sharing system. The marketing campaign will run in the months leading up to release—building wishlists, growing the Early Access community, and making sure the launch has real momentum behind it.</p>
+
+    <div class="footer-note">
+        <span class="badge">Funding requested</span> $25,000 – $58,000 &bull; 
+        <span class="badge">Release date</span> November 17, 2027 &bull;
+        <span class="badge">Platform</span> Outersloth
+    </div>
+
+</div>
+</body>
+</html>
