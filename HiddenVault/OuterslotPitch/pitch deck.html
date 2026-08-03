@@ -21,7 +21,7 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding: 2rem 1rem;  /* equal top and bottom padding */
+            padding: 2rem 1rem;
             line-height: 1.6;
             color: #1e293b;
             min-height: 100vh;
@@ -35,7 +35,7 @@
             padding: 2.8rem 3.2rem;
             box-shadow: 0 16px 48px rgba(0,0,0,0.07);
             box-sizing: border-box;
-            margin: 0;  /* no extra margin, body padding handles spacing */
+            margin: 0;
         }
 
         h1 {
@@ -52,6 +52,78 @@
             border-bottom: 2px solid #e9edf2;
             padding-bottom: 1.4rem;
             margin-bottom: 2rem;
+        }
+
+        .highlight-box {
+            background: #f1f5f9;
+            padding: 1.2rem 1.8rem;
+            border-radius: 14px;
+            margin: 1.4rem 0 1.6rem 0;
+            border-left: 5px solid #2563eb;
+        }
+
+        .highlight-box strong {
+            color: #0f172a;
+        }
+
+        .highlight-box ul {
+            margin: 0.3rem 0 0 1.2rem;
+        }
+
+        .no-personal {
+            background: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 0.8rem 1.4rem;
+            border-radius: 10px;
+            margin-bottom: 1.8rem;
+            font-weight: 500;
+            color: #065f46;
+        }
+
+        .no-personal strong {
+            color: #047857;
+        }
+
+        .excess-funds {
+            background: #fef3c7;
+            border-left: 5px solid #f59e0b;
+            padding: 0.8rem 1.4rem;
+            border-radius: 10px;
+            margin: 1.8rem 0 1.2rem 0;
+            font-weight: 500;
+            color: #92400e;
+        }
+
+        .excess-funds strong {
+            color: #b45309;
+        }
+
+        .pillar-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0 1.6rem 0;
+        }
+
+        .pillar {
+            background: #f8fafc;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .pillar .num {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2563eb;
+            display: block;
+        }
+
+        .pillar .label {
+            font-size: 0.85rem;
+            color: #475569;
+            margin-top: 0.2rem;
         }
 
         h2 {
@@ -85,22 +157,6 @@
         li {
             margin-bottom: 0.35rem;
             color: #1e293b;
-        }
-
-        .highlight-box {
-            background: #f1f5f9;
-            padding: 1.2rem 1.8rem;
-            border-radius: 14px;
-            margin: 1.4rem 0 1.6rem 0;
-            border-left: 5px solid #2563eb;
-        }
-
-        .highlight-box strong {
-            color: #0f172a;
-        }
-
-        .highlight-box ul {
-            margin: 0.3rem 0 0 1.2rem;
         }
 
         table {
@@ -166,7 +222,7 @@
 
         @media (max-width: 650px) {
             body {
-                padding: 1rem 0.8rem;  /* equal top/bottom on mobile too */
+                padding: 1rem 0.8rem;
             }
             .container {
                 padding: 1.6rem 1.2rem;
@@ -186,6 +242,9 @@
             .budget-summary {
                 padding: 1rem 1.2rem;
             }
+            .pillar-box {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -195,11 +254,39 @@
     <h1>Funding Pitch</h1>
     <div class="subhead">Outersloth &bull; November 17, 2027 release target &bull; $25,000–$58,000 requested</div>
 
+    <div class="no-personal">
+        <strong>$0 — Personal Expenditures.</strong> I have a stable career already, so none of these funds go toward living expenses, salary, or personal use. Every dollar goes directly into development and marketing.
+    </div>
+
+    <div class="excess-funds">
+        <strong>Excess Funds Policy.</strong> Once 100,000 units (Intro or Full Version) have been sold, the community becomes self-sustaining. At that point, I will return any excess funds to Outersloth.
+    </div>
+
+    <div class="pillar-box">
+        <div class="pillar">
+            <span class="num">∞</span>
+            <span class="label">Infinite Content Engine — players create the content, game never stops growing</span>
+        </div>
+        <div class="pillar">
+            <span class="num">$0</span>
+            <span class="label">Personal Salary — lean operation, no overhead, every dollar goes to the game</span>
+        </div>
+    </div>
+
+    <h2>Why This Game?</h2>
+    <p>The game is not a one-time experience. The Amalgamator field editor turns every player into a potential creator. Combined with Discord integration and the upcoming online sharing system, content flows from players back into the game indefinitely. The Intro Version is already live. The foundation is built. What's missing is the marketing push to bridge from early adopters to a self-sustaining community.</p>
+    <p>Three difficulty modes (Flawless, Revival, Immortal) ensure anyone can play — from rhythm veterans to first-time VR users. This broadens the audience beyond a single niche.</p>
+    <p>The codebase is designed for expansion. Adding new content doesn't require rewriting systems. This keeps development agile and responsive to player feedback.</p>
+
+    <h2>Marketing as a Skill</h2>
+    <p>I treat marketing like any other skill I've learned — programming, debugging, systems design. It's improvable, replicable, and systematic. It has patterns, best practices, known failure modes, and room for iteration. I've spent time studying what works and what doesn't, specifically for rhythm games, VR, and user-generated content.</p>
+    <p>I also study the failures. The indie graveyard is full of good games that never got seen. I don't want to join it. So I learn from both successes and mistakes. Not every campaign will convert. Not every channel will deliver. That's fine — I'm not looking for a silver bullet. I'm looking for a systematic approach: test, measure, double down on what works, cut what doesn't. Just like writing code.</p>
+
     <h2>Hardware Upgrades</h2>
     <p><strong>$2,000 – $3,000</strong></p>
     <p>VR development is demanding, and Unreal Engine 5 doesn't go easy on hardware. These upgrades are about keeping workflow smooth and avoiding constant waiting.</p>
     <ul>
-        <li><strong>GPU:</strong> NVIDIA GeForce RTX 4080 or 4090 ($1,200 – $1,800). VR needs stable, high frame rates—stutter breaks immersion and makes testing uncomfortable. User-generated fields can get complex, and a 4090 gives enough headroom to handle them without dropping frames.</li>
+        <li><strong>GPU:</strong> NVIDIA GeForce RTX 4080 or 4090 ($1,200 – $1,800). VR needs stable, high frame rates — stutter breaks immersion and makes testing uncomfortable. User-generated fields can get complex, and a 4090 gives enough headroom to handle them without dropping frames.</li>
         <li><strong>CPU:</strong> AMD Ryzen 9 7900X or Intel i9-13900K ($400 – $600). Faster compilation means less time staring at progress bars. When iterating on gameplay or debugging, those seconds add up fast.</li>
         <li><strong>RAM:</strong> 64GB DDR5 ($200 – $300). Running UE5, Visual Studio, profiling tools, and VR runtime simultaneously eats memory. 64GB keeps everything running side by side without bottlenecks.</li>
         <li><strong>Storage:</strong> 2TB NVMe SSD ($150 – $250). Faster builds and asset loading mean less downtime between test runs.</li>
@@ -230,7 +317,7 @@
         <li><strong>Specialized game marketing agencies</strong> – not generalists. I want people who understand the rhythm and VR space. Agencies I'm looking at include Heaven Media, Neptune Agency, Stratigia, and Impact Reality.</li>
         <li><strong>Direct outreach to creators and streamers</strong> – contacting them personally on YouTube, Twitch, and similar platforms. Offering early access keys, demo builds, and unique content to showcase.</li>
     </ul>
-    <p>I'm not spreading efforts across TikTok videos or Reddit posts—those channels have lower conversion rates and don't align with the audience I need to reach. The focus is on getting the game in front of people who will actually play it and share it with their communities.</p>
+    <p>I'm not spreading efforts across TikTok videos or Reddit posts — those channels have lower conversion rates and don't align with the audience I need to reach. The focus is on getting the game in front of people who will actually play it and share it with their communities.</p>
     <p>The marketing campaign serves two purposes:</p>
     <ul>
         <li><strong>Grow the community</strong> around the Intro Version (Early Access) that's already out there. Get players in, get them creating fields, and get the ecosystem going.</li>
@@ -271,7 +358,11 @@
 
     <h2>Timeline</h2>
     <p><strong>Full Version release target: November 17, 2027</strong></p>
-    <p>Between now and then, the remaining deliverables are the last main fields and the online field-sharing system. The marketing campaign will run in the months leading up to release—building wishlists, growing the Early Access community, and making sure the launch has real momentum behind it.</p>
+    <p>Between now and then, the remaining deliverables are the last main fields and the online field-sharing system. The marketing campaign will run in the months leading up to release — building wishlists, growing the Early Access community, and making sure the launch has real momentum behind it.</p>
+
+    <div class="excess-funds" style="margin-top:2rem;">
+        <strong>One final thing:</strong> This grant is about ignition, not profit padding. The goal is to get the community to critical mass. After 100,000 units sold, the game sustains itself. I will return any excess funds at that point.
+    </div>
 
     <div class="footer-note">
         <span class="badge">Funding requested</span> $25,000 – $58,000 &bull; 
