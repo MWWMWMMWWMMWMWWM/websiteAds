@@ -171,6 +171,23 @@
         .modal-btn.cancel:hover {
             background: rgba(255, 255, 255, 0.1);
         }
+        /* Footer with links to the business pages */
+        .biz-footer {
+            margin-top: 1.6rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #c9dcf0;
+            letter-spacing: 0.03em;
+        }
+        .biz-footer a {
+            color: #a8e0ff;
+            text-underline-offset: 3px;
+        }
+        .biz-footer a:hover,
+        .biz-footer a:focus {
+            color: #ffffff;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -266,6 +283,16 @@
 
         <div class="decorative-line"></div>
     </div>
+
+    <!-- Business pages -->
+    <footer class="biz-footer">
+        <p>For businesses:
+            <a href="/accessibility.html">Website accessibility fixes</a> ·
+            <a href="/prices.html">Prices</a> ·
+            <a href="/privacy.html">Privacy</a> ·
+            <a href="/tilgjengelighet.html" hreflang="nb" lang="nb">På norsk</a>
+        </p>
+    </footer>
 
     <!-- Download Confirmation Modal -->
     <div class="modal-overlay" id="downloadModal">
